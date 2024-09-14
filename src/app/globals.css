@@ -25,3 +25,23 @@ body {
     text-wrap: balance;
   }
 }
+
+
+@media print {
+  /* Hide all elements by default */
+  body * {
+      display: none;
+  }
+
+  /* Show only the print content */
+  .print-content, .print-content * {
+      display: block;
+  }
+
+  /* Style the print content */
+  .print-content {
+      border: 1px solid black;
+      padding: 20px;
+  }
+}
+
