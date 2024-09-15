@@ -1,5 +1,6 @@
 import useExcelWork from '@/hooks/useExcelWork';
 import React from 'react';
+import '../../styles/tailwind.css';
 
 const SaveExcelButton = () => {
 

@@ -1,13 +1,13 @@
 import React from 'react';
+import '../../styles/tailwind.css';
 import ProductCheckList from './ProductCheckList';
 import useProductStore from '@/store/useProductStore';
+import MediumTitleText from '../common/MediumTitleText';
+import CloseButton from '../common/CloseButton';
+import PrintButton from './PrintButton';
+import CheckTotal from './CheckTotal';
 
 const CheckModal = ({ toggleModal }) => {
-    const { total } = useProductStore();
-
-    const handlePrint = () => {
-        window.print(); // This will trigger the print dialog
-    };
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
@@ -34,35 +34,19 @@ const CheckModal = ({ toggleModal }) => {
 
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
                 <div className="print-content">
-                    <p className='mb-7 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white'>
-                        Jastar
-                    </p>
-
+                    <MediumTitleText>Jastar</MediumTitleText>
                     <ProductCheckList />
-
-                    <div className="flex justify-between mt-6 border-t pt-4">
-                        <p className="text-lg font-semibold">Итого:</p>
-                        <p className="text-lg font-semibold">{total}тг</p>
-                    </div>
+                    <CheckTotal />
                 </div>
 
                 <div className="flex justify-between mt-6 no-print">
-                    <button
-                        onClick={toggleModal}
-                        className="bg-red-500 text-white px-4 py-2 rounded-lg"
-                    >
-                        Закрыть
-                    </button>
-                    <button
-                        onClick={handlePrint}
-                        className="bg-green-500 text-white px-4 py-2 rounded-lg"
-                    >
-                        Печать
-                    </button>
+                    <CloseButton closeModal={toggleModal} />
+                    <PrintButton />
                 </div>
             </div>
         </div>
     );
+
 }
 
 export default CheckModal;

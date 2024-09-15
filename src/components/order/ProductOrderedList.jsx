@@ -1,5 +1,6 @@
 import useProductStore from '@/store/useProductStore';
 import React from 'react';
+import '../../styles/tailwind.css';
 
 const ProductOrderedList = () => {
 

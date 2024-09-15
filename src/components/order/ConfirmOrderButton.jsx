@@ -1,4 +1,5 @@
 import useProductStore from '@/store/useProductStore';
+import '../../styles/tailwind.css';
 import React, { useState } from 'react';
 import CheckModal from './CheckModal';
 

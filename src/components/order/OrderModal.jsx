@@ -1,4 +1,5 @@
 import useProductStore from '@/store/useProductStore';
+import '../../styles/tailwind.css';
 import React from 'react';
 import ProductOrderedList from './ProductOrderedList';
 import ConfirmOrderButton from './ConfirmOrderButton';
